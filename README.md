@@ -1,71 +1,59 @@
-# williamsManriqueRojas
+# Frontend
 
-# Arquitectura Distribuida en AWS con Docker
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
 
-## Descripción
-Proyecto que implementa una arquitectura distribuida con:
+## Development server
 
-- Frontend: Angular
-- Backend: Spring Boot
-- Base de datos: SQL Server en Docker
-- Infraestructura: AWS EC2
+To start a local development server, run:
 
----
+```bash
+ng serve
+```
 
-## Arquitectura
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-Frontend → Backend → Database
+## Code scaffolding
 
-- Angular consume API REST
-- Spring Boot conecta con SQL Server
-- Comunicación mediante IP privada en AWS
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+git
+```bash
+ng generate component component-name
+```
 
----
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-## nfraestructura AWS
+```bash
+ng generate --help
+```
 
-- EC2 Frontend (Angular + Nginx)
-- EC2 Backend (Spring Boot API)
-- EC2 Database (SQL Server Docker)
+## Building
 
----
+To build the project run:
 
-## Docker
+```bash
+ng build
+```
 
-Cada componente está dockerizado:
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-- Dockerfile en frontend
-- Dockerfile en backend
-- SQL Server en contenedor oficial
+## Running unit tests
 
----
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
-## Endpoints
+```bash
+ng test
+```
 
-GET /datos → retorna lista de productos
+## Running end-to-end tests
 
----
+For end-to-end (e2e) testing, run:
 
-## Configuración Backend
+```bash
+ng e2e
+```
 
-spring.datasource.url=jdbc:sqlserver://IP_DB:1433;databaseName=proyecto_db
-spring.datasource.username=sa
-spring.datasource.password=TuPassword123!
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
----
+## Additional Resources
 
-## Ejecución
-
-### Backend
-docker build -t backend-app .
-docker run -p 8080:8080 backend-app
-
-### Frontend
-docker build -t frontend-app .
-docker run -p 80:80 frontend-app
-
-### Database
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=TuPassword123!' -p 1433:1433 mcr.microsoft.com/mssql/server
-
----
-
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
